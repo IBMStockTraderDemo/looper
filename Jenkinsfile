@@ -1,4 +1,23 @@
-@Library('MicroserviceBuilder') _
-microserviceBuilderPipeline {
-  image = 'looper'
+pipeline {  
+    environment {
+         imagename = "looper"
+     }
+
+    agent any
+    stages {
+       stage('Build') { 
+          steps {
+              sh 'mvn clean package' 
+          }
+       }  
+       stage('Deliver') {
+            steps {
+                script {
+                    docker.build imagename
+                }
+                sh '/push2dockerhub.sh $imagename'
+            }
+       }
+    }
+
 }
