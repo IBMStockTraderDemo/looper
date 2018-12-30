@@ -13,6 +13,7 @@
 #   limitations under the License.
 
 FROM websphere-liberty:microProfile2
+USER root
 COPY server.xml /config/server.xml
 COPY jvm.options /config/jvm.options
 COPY server/target/server-1.0-SNAPSHOT.war /config/apps/looper.war
