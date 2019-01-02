@@ -27,7 +27,7 @@ spec:
       containers:
       - name: looper
 #       image: looper:latest
-        image: ibmstocktrader/looper:latest
+        image: stocktraderdemo/looper:latest
         env:
           - name: JWT_AUDIENCE
             valueFrom:
