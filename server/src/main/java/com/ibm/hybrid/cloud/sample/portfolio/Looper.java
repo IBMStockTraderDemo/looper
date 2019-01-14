@@ -73,7 +73,7 @@ public class Looper extends Application {
 		StringBuffer response = new StringBuffer();
 
 		try {
-        if (id==ull) id = BASE_ID;
+      if (id==null) id = BASE_ID;
 			if (count==null) count=1; //isn't autoboxing cool?
 	
 			System.out.println("Entering looper, with ID: "+id+" and count: "+count);
