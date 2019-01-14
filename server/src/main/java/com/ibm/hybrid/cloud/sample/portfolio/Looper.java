@@ -73,7 +73,7 @@ public class Looper extends Application {
 		StringBuffer response = new StringBuffer();
 
 		try {
-			if (id==null) id = BASE_ID;
+        if (id==ull) id = BASE_ID;
 			if (count==null) count=1; //isn't autoboxing cool?
 	
 			System.out.println("Entering looper, with ID: "+id+" and count: "+count);
@@ -81,7 +81,7 @@ public class Looper extends Application {
 			String jwt = "Bearer "+createJWT(id);
 	
 			System.out.println("Created a JWT");
-			System.out.println("JWT: "+jwt);
+			//System.out.println("JWT: "+jwt);
 	
 			long beginning = System.currentTimeMillis();
 	
@@ -113,6 +113,29 @@ public class Looper extends Application {
 
 		return response.toString();
 	}
+
+    @GET
+    @Path("/jwt")
+	@Produces("text/plain")
+	public String getjwt() {
+		StringBuffer response = new StringBuffer();
+
+		try {
+			System.out.println("Entering looper, with ID: "+id+" and count: "+count);
+	
+			String jwt = "Bearer "+createJWT('admin');
+	
+			System.out.println("Created a JWT");
+
+      response.append(jwt);
+	
+		} catch (Throwable t) {
+			t.printStackTrace();
+		}
+
+		return response.toString();
+	}
+
 
 	public StringBuffer iteration(String id, String jwt) {
 		StringBuffer response = new StringBuffer();
