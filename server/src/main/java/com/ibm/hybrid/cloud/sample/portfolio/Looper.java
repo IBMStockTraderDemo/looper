@@ -123,7 +123,7 @@ public class Looper extends Application {
 		try {
 			System.out.println("Entering looper, with ID: "+id+" and count: "+count);
 	
-			String jwt = "Bearer "+createJWT('admin');
+			String jwt = "Bearer "+createJWT("admin");
 	
 			System.out.println("Created a JWT");
 
