@@ -40,7 +40,7 @@ public class LooperController implements Runnable {
 		count = times;
 		String credentials = id+":"+pwd;
 		auth = "Basic "+Base64.getEncoder().encodeToString(credentials.getBytes());
-    System.out.println("AUTH: "+auth);
+    //System.out.println("AUTH: "+auth);
 	}
 
 	public static void loop(String url, int times, int threads, String id, String pwd) throws InterruptedException {
