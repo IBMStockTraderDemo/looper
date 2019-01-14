@@ -121,7 +121,7 @@ public class Looper extends Application {
 		StringBuffer response = new StringBuffer();
 
 		try {
-			System.out.println("Entering looper, with ID: "+id+" and count: "+count);
+			System.out.println("Entering jwt");
 	
 			String jwt = "Bearer "+createJWT("admin");
 	
