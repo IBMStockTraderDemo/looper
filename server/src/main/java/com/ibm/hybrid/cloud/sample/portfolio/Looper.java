@@ -81,6 +81,7 @@ public class Looper extends Application {
 			String jwt = "Bearer "+createJWT(id);
 	
 			System.out.println("Created a JWT");
+			System.out.println("JWT: "+jwt);
 	
 			long beginning = System.currentTimeMillis();
 	
