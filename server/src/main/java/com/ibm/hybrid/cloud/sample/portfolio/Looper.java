@@ -125,8 +125,6 @@ public class Looper extends Application {
 	
 			String jwt = "Bearer "+createJWT("admin");
 	
-			System.out.println("Created a JWT");
-
       response.append(jwt);
 	
 		} catch (Throwable t) {
