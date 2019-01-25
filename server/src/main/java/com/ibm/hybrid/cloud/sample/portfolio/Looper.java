@@ -144,7 +144,7 @@ public class Looper extends Application {
 		response.append("2:  POST /portfolio/"+id+"\n"+
 			portfolioClient.createPortfolio(jwt, id)+"\n\n"); //Create a new portfolio
 
-		response.append("3:  PUT /portfolio/"+id+"?symbol="+SYMBOL1+"&shares=1\n"+
+		response.append("3:  PUT /portfolio/"+id+"?symbol="+SYMBOL1+"&shares=1000\n"+
 			portfolioClient.updatePortfolio(jwt, id, SYMBOL1, 1)+"\n\n"); //Buy stock for this portfolio
 
 		response.append("4:  PUT /portfolio/"+id+"?symbol="+SYMBOL2+"&shares=2\n"+
@@ -159,10 +159,10 @@ public class Looper extends Application {
 		response.append("7:  GET /portfolio\n"+
 			portfolioClient.getPortfolios(jwt)+"\n\n"); //Summary of all portfolios, to see results
 
-		response.append("8:  PUT /portfolio/"+id+"?symbol="+SYMBOL1+"&shares=6\n"+
+		response.append("8:  PUT /portfolio/"+id+"?symbol="+SYMBOL1+"&shares=6000\n"+
 			portfolioClient.updatePortfolio(jwt, id, SYMBOL1, 6)+"\n\n"); //Buy more of this stock for this portfolio
 
-		response.append("9:  PUT /portfolio/"+id+"?symbol="+SYMBOL3+"&shares=-3\n"+
+		response.append("9:  PUT /portfolio/"+id+"?symbol="+SYMBOL3+"&shares=-32\n"+
 			portfolioClient.updatePortfolio(jwt, id, SYMBOL3, -3)+"\n\n"); //Sell all of this stock for this portfolio
 
 		response.append("10: GET /portfolio/"+id+"\n"+
