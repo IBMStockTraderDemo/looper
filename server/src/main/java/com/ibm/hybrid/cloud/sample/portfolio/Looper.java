@@ -138,6 +138,9 @@ public class Looper extends Application {
 	public StringBuffer iteration(String id, String jwt) {
 		StringBuffer response = new StringBuffer();
 
+		response.append("0:  DELETE /portfolio/"+id+"\n"+
+			portfolioClient.deletePortfolio(jwt, id)+"\n\n"); //Remove this portfolio
+
 		response.append("1:  GET /portfolio\n"+
 			portfolioClient.getPortfolios(jwt)+"\n\n"); //Summary of all portfolios
 
